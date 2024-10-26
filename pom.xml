@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jonander2233</groupId>
+    <artifactId>jitPack-myJavaLibrary</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <scm>
+        <url>https://github.com/jonander2233/myJavaLibrary</url>
+        <connection>scm:git:https://github.com/jonander2233/myJavaLibrary.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:jonander2233/myJavaLibrary.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    <developers>
+        <developer>
+            <id>jonander2233</id>
+            <name>Jon Ander</name>
+            <email>jonander2233@gmail.com</email>
+        </developer>
+    </developers>
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
