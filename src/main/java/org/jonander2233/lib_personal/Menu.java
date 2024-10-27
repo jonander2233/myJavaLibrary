@@ -35,8 +35,6 @@ public class Menu {
                 System.out.println("error, el numero introducido no es valido");
             }
 
-
-
         }while (opcion < 1 || opcion > opciones.length);
         return opcion;
     }
@@ -52,7 +50,7 @@ public class Menu {
                 System.out.println("Entrada no válida. Debe ingresar un número entero.");
                 scanner.next();
             }
-        }while (valido==false);
+        }while (!valido);
         return numero;
     }
 
