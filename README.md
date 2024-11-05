@@ -1,4 +1,5 @@
-build.gradle
+`build.gradle`
+
 ```gradle
 repositories {
     mavenCentral()
@@ -8,7 +9,7 @@ dependencies {
     implementation ("com.github.jonander2233:myJavaLibrary:1.0.0")
 }
 ```
-Maven
+`Maven`
 ```
 <repositories>
         <repository>
