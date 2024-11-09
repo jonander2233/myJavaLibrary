@@ -21,7 +21,7 @@ dependencies {
         <dependency>
             <groupId>com.github.jonander2233</groupId>
             <artifactId>myJavaLibrary</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
             <groupId>net.datafaker</groupId>
