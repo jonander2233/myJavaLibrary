@@ -97,13 +97,13 @@ public class Arrayp {
         if (pares == true){
             for (int i =0; i<arrayNums.length; i++){
                 if (arrayNums[i] % 2 == 0){
-                    Eys.imprimir("par numero "+ i +" es "+ arrayNums[i] );
+                    System.out.println("par numero "+ i +" es "+ arrayNums[i] );
                 }
             }
         }else if (pares == false){
             for (int i =0; i<arrayNums.length; i++){
                 if (arrayNums[i] % 2 == 1){
-                    Eys.imprimir("impar numero "+ i +" es "+ arrayNums[i] );
+                    System.out.println("impar numero "+ i +" es "+ arrayNums[i] );
                 }
             }
         }
@@ -114,7 +114,7 @@ public class Arrayp {
         if (multiplo >0){
             for(int i=0; i<arrayNumeros.length;i++){
                 if(arrayNumeros[i] % multiplo ==0){
-                    Eys.imprimir("El numero "+ arrayNumeros[i]+" en la posicion "+ i +" es multiplo de "+ multiplo );
+                    System.out.println("El numero "+ arrayNumeros[i]+" en la posicion "+ i +" es multiplo de "+ multiplo );
                 }
             }
         }

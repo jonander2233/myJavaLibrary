@@ -1,6 +1,16 @@
 package org.jonander2233.lib_personal;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 public class Menu {
+    private static Locale locale = Locale.getDefault(); // Idioma por defecto del sistema
+    private static ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
+
+    public static void cambiarIdioma(String idioma, String pais) {
+        locale = new Locale(idioma, pais);
+        mensajes = ResourceBundle.getBundle("messages", locale);
+    }
+
     public static int mostrar(String titulo, String[] opciones,String textoFinal){
         int opcion;
         do {
@@ -14,7 +24,7 @@ public class Menu {
             System.out.println("0."+textoFinal);
             opcion = validarOpcion();
             if (opcion < 0 || opcion > opciones.length) {
-                System.out.println("error, el numero introducido no es valido");
+                System.out.println(mensajes.getString("num_invalido_err"));
             }
         }while (opcion < 0 || opcion > opciones.length);
         return opcion;
@@ -32,7 +42,7 @@ public class Menu {
             opcion = validarOpcion();
 
             if (opcion < 1 || opcion > opciones.length) {
-                System.out.println("error, el numero introducido no es valido");
+                System.out.println(mensajes.getString("num_invalido_err"));
             }
 
 
@@ -49,7 +59,7 @@ public class Menu {
                 numero = scanner.nextInt();
                 valido = true;
             } else {
-                System.out.println("Entrada no válida. Debe ingresar un número entero.");
+                System.out.println(mensajes.getString("int_num_err"));
                 scanner.next();
             }
         }while (valido==false);

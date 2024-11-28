@@ -15,7 +15,7 @@ public class Matrices {
             for(int y = 0; y < matriz[x].length; y ++){
                 System.out.print(matriz[x][y]+" ");
             }
-            Eys.imprimir("\n");
+            System.out.println("\n");
         }
     }
 }
