@@ -45,8 +45,6 @@ public class Menu {
                 System.out.println(mensajes.getString("num_invalido_err"));
             }
 
-
-
         }while (opcion < 1 || opcion > opciones.length);
         return opcion;
     }
@@ -62,7 +60,7 @@ public class Menu {
                 System.out.println(mensajes.getString("int_num_err"));
                 scanner.next();
             }
-        }while (valido==false);
+        }while (!valido);
         return numero;
     }
 

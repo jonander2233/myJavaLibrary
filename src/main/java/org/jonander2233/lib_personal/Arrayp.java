@@ -13,9 +13,6 @@ public class Arrayp {
         return resultado.toString();
     }
 
-
-
-
     public static String arrayDevolverPosicionImpar(char[]letras){
         StringBuilder resultado = new StringBuilder();
 
@@ -24,35 +21,22 @@ public class Arrayp {
         }
         return resultado.toString();
     }
-
-
-
-
-
     //metodo para rellenar con números aleatorios un array
     public static void rellenarAleatorio (int[]arrayNumeros, int min, int max){
         for(int i=0; i< arrayNumeros.length; i++){
             arrayNumeros[i] = aleatorio.nextInt(max- min + 1) + min;
         }
     }
-
-
-
-
-
     //metodo para obtener multiplos de un numero (se devuelve un array nuevo con esos numeros)
     public static int[] obtenerMultiplos(int[]arrayNumeros, int multiplo){
         if (multiplo >0){
-
             int cantidadMultiplos=0;
             for(int numero: arrayNumeros){
                 if (numero % multiplo == 0){
                     cantidadMultiplos++;
                 }
             }
-
             int[] arrayMultiplos = new int[cantidadMultiplos];
-
             int posicion=0;
             for(int numero1: arrayNumeros){
                 if (numero1 % multiplo == 0){
@@ -66,11 +50,6 @@ public class Arrayp {
             return null;
         }
     }
-
-
-
-
-
     //metodo para obtener si un número en concreto está en el array
     public static boolean obtenerSiNumEstaEnArray (int[]arrayNumeros, int num){
         boolean resultado=false;
@@ -86,10 +65,6 @@ public class Arrayp {
             }
         }
         return resultado;
-    }
-
-    public static int[] ordenarBurbuja(int[] arrayNums){
-        return null;
     }
 
     //metodo para obtener los números pares de un array de numeros enteros y su posición en el array
@@ -119,8 +94,6 @@ public class Arrayp {
             }
         }
     }
-
-
     //metodo para obtener las posiciones del array invertidas
     public static int[] devolverInverso(int[] arrayAInvertir){
         int[] arrayInvertido = new int[arrayAInvertir.length];
@@ -131,7 +104,6 @@ public class Arrayp {
         }
         return arrayInvertido;
     }
-
     //metodo para ir sumando las posiciones de un array y guardar el resultado en otro
     public static int[] sumatorio(int[]arrayASumar){
         int[] arraySumado = new int[arrayASumar.length];
