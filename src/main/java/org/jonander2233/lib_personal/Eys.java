@@ -198,7 +198,7 @@ public class Eys {
         Date fecha = null;
         do {
             try {
-                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString(" formato_fecha") + formatoFecha, 10, 10);
+                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString("formato_fecha") + formatoFecha, 10, 10);
                 fecha = formato.parse(fechaString);
                 valido = true;
             } catch (ParseException e) {
