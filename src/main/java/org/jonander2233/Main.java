@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
         Eys.cambiarIdioma("en","EN");
-        boolean respuesta = Eys.ImprimirYleerCharSN("quieres?");
-        System.out.println(respuesta);
+        Double a = Eys.imprimirYLeerDouble("a");
+        System.out.println(a);
     }
 
 }

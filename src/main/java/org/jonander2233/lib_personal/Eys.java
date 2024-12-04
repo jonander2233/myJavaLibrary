@@ -24,14 +24,23 @@ public class Eys {
     }
 
     // --------------------------Reales--------------------------------------------------------
-    public static double imprimirYLeerDouble(String texto) {
+    public static Double imprimirYLeerDouble(String texto) {
         System.out.println(texto);
-        double respuesta = Double.parseDouble(lector.nextLine());
-        return respuesta;
+        String res = lector.nextLine();
+        Double num = null;
+        if(!res.isBlank()){
+            num = Double.parseDouble(res);
+        }
+        return num;
     }
 
     public static double leerDouble() {
-        return Double.parseDouble(lector.nextLine());
+        String res = lector.nextLine();
+        Double num = null;
+        if(!res.isBlank()){
+            num = Double.parseDouble(res);
+        }
+        return num;
     }
 
     public static void imprimirDouble(double num) {
@@ -102,10 +111,13 @@ public class Eys {
         return respuesta;
     }
 
-    public static int leerInt() {
-        int respuesta = Integer.parseInt(lector.nextLine());
-        return respuesta;
-
+    public static Integer leerInt() {
+        String res = lector.nextLine();
+        Integer num = null;
+        if(!res.isBlank()){
+            num = Integer.parseInt(res);
+        }
+        return num;
     }
 
     public static void imprimirInt(int num) {
@@ -148,7 +160,7 @@ public class Eys {
         Date fecha = null;
         do {
             try {
-                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString("formato_fecha") + formatoFecha, 10, 10);
+                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString(" formato_fecha") + formatoFecha, 10, 10);
                 fecha = formato.parse(fechaString);
                 valido = true;
             } catch (ParseException e) {
@@ -186,7 +198,7 @@ public class Eys {
         Date fecha = null;
         do {
             try {
-                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString("formato_fecha") + formatoFecha, 10, 10);
+                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString(" formato_fecha") + formatoFecha, 10, 10);
                 fecha = formato.parse(fechaString);
                 valido = true;
             } catch (ParseException e) {
