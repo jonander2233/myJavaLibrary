@@ -30,7 +30,7 @@ public class Menu {
         }while (opcion < 0 || opcion > opciones.length);
         return opcion;
     }
-    public static int show(String titulo, String[] opciones){
+    public int show(String titulo, String[] opciones){
         int opcion;
         do {
             System.out.println("***************************************");

@@ -10,10 +10,10 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Eys {
-    private static Scanner lector = new Scanner(System.in);
-    private static Locale locale;
-    private static ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
-    private static Menu menu;
+    private Scanner lector = new Scanner(System.in);
+    private Locale locale;
+    private ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
+    private Menu menu;
     public Eys(Lang language) {
         locale = new Locale(language.getLang(), language.getCountry());
         this.menu = new Menu(language);
@@ -23,7 +23,7 @@ public class Eys {
         return texto;
     }
     // --------------------------Reales--------------------------------------------------------
-    public static Double imprimirYLeerDouble(String texto) {
+    public Double imprimirYLeerDouble(String texto) {
         System.out.println(texto);
         String res = lector.nextLine();
         Double num = null;
@@ -33,7 +33,7 @@ public class Eys {
         return num;
     }
 
-    public static double leerDouble() {
+    public double leerDouble() {
         String res = lector.nextLine();
         Double num = null;
         if(!res.isBlank()){
@@ -42,11 +42,11 @@ public class Eys {
         return num;
     }
 
-    public static void imprimirDouble(double num) {
+    public void imprimirDouble(double num) {
         System.out.println(num);
     }
 
-    public static float imprimirYLeerFloat(String texto, int min, int max) {
+    public float imprimirYLeerFloat(String texto, int min, int max) {
         float respuesta = 0;
         boolean valido = false;
         System.out.println(texto);
@@ -69,7 +69,7 @@ public class Eys {
     // --------------------------Enteros--------------------------------------------------------
 
 
-    public static int imprimirYLeerInt(String texto, int min, int max) {
+    public int imprimirYLeerInt(String texto, int min, int max) {
         int respuesta = 0;
         boolean valido = false;
         System.out.println(texto);
@@ -90,7 +90,7 @@ public class Eys {
         return respuesta;
     }
 
-    public static int leerInt(int min, int max) {
+    public int leerInt(int min, int max) {
         int respuesta = 0;
         boolean valido = false;
         do {
@@ -110,7 +110,7 @@ public class Eys {
         return respuesta;
     }
 
-    public static Integer leerInt() {
+    public Integer leerInt() {
         String res = lector.nextLine();
         Integer num = null;
         if(!res.isBlank()){
@@ -119,23 +119,23 @@ public class Eys {
         return num;
     }
 
-    public static void imprimirInt(int num) {
+    public void imprimirInt(int num) {
         System.out.println(num);
     }
 
     // --------------------------Char--------------------------------------------------------
-    public static char leerChar() {
+    public char leerChar() {
         String texto = lector.nextLine();
         char caracter = texto.charAt(0);
         return caracter;
     }
 
-    public static boolean ImprimirYleerCharSN(String texto) {
+    public boolean ImprimirYleerCharSN(String texto) {
         char respuesta;
         boolean respuestaBool = false;
         System.out.println(texto + " " +mensajes.getString("si_no"));
         do {
-            respuesta = Character.toUpperCase( Eys.leerChar());
+            respuesta = Character.toUpperCase( this.leerChar());
             if (respuesta == mensajes.getString("si").charAt(0)) {
                 respuestaBool = true;
             } else if (respuesta == mensajes.getString("no").charAt(0)) {
@@ -153,13 +153,13 @@ public class Eys {
      * @param formatoFecha formato en tipo string, ej ----> "dd-MM-yyyy"
      * @return retorna un Date
      */
-    public static Date imprimirYLeerDate(String texto, String formatoFecha) {
+    public Date imprimirYLeerDate(String texto, String formatoFecha) {
         boolean valido = false;
         SimpleDateFormat formato = new SimpleDateFormat(formatoFecha);
         Date fecha = null;
         do {
             try {
-                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString(" formato_fecha") + formatoFecha, 10, 10);
+                String fechaString = this.imprimirYLeer(texto + mensajes.getString(" formato_fecha") + formatoFecha, 10, 10);
                 fecha = formato.parse(fechaString);
                 valido = true;
             } catch (ParseException e) {
@@ -176,7 +176,7 @@ public class Eys {
      * @param <T>
      * @return Enum Titulo
      */
-    public static <T extends Enum<T>> T imprimirYLeerEnum(String texto, Class<T> enumClass) {
+    public <T extends Enum<T>> T imprimirYLeerEnum(String texto, Class<T> enumClass) {
         String[] opcionesString = new String[enumClass.getEnumConstants().length];
         for (int i = 0; i < enumClass.getEnumConstants().length; i++) {
             opcionesString[i] = enumClass.getEnumConstants()[i].toString();
@@ -190,14 +190,14 @@ public class Eys {
      * @param texto el texto que se va a imprimir
      * @return un Date
      */
-    public static Date imprimirYLeerDate(String texto) {
+    public Date imprimirYLeerDate(String texto) {
         String formatoFecha = "dd-MM-yyyy";
         boolean valido = false;
         SimpleDateFormat formato = new SimpleDateFormat(formatoFecha);
         Date fecha = null;
         do {
             try {
-                String fechaString = Eys.imprimirYLeer(texto + mensajes.getString("formato_fecha") + formatoFecha, 10, 10);
+                String fechaString = this.imprimirYLeer(texto + mensajes.getString("formato_fecha") + formatoFecha, 10, 10);
                 fecha = formato.parse(fechaString);
                 valido = true;
             } catch (ParseException e) {
@@ -207,7 +207,7 @@ public class Eys {
         return fecha;
     }
 
-    public static String imprimirYLeer(String texto, int min, int max) {
+    public String imprimirYLeer(String texto, int min, int max) {
         String respuesta;
         do {
             System.out.println(texto);
@@ -219,7 +219,7 @@ public class Eys {
         return respuesta;
     }
 
-    public static String imprimirYLeerConExclusion(String texto, int min, int max, String palabraExcluida) {
+    public String imprimirYLeerConExclusion(String texto, int min, int max, String palabraExcluida) {
         String respuesta;
         do {
             System.out.println(texto);
@@ -232,21 +232,21 @@ public class Eys {
     }
 
     // --------------------------Arrays--------------------------------------------------------
-    public static void leerArrayChar(char[] letras) {
+    public void leerArrayChar(char[] letras) {
         for (int i = 0; i < letras.length; i++) {
-            letras[i] = Eys.leerChar();
+            letras[i] = this.leerChar();
         }
     }
 
-    public static void leerArrayNum(int[] nums) {
+    public void leerArrayNum(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = Eys.leerInt();
+            nums[i] = this.leerInt();
         }
     }
 
-    public static void leerArrayDouble(double[] nums) {
+    public void leerArrayDouble(double[] nums) {
         for (int i = 0; i < nums.length; i++) {
-            nums[i] = Eys.leerInt();
+            nums[i] = this.leerInt();
         }
     }
 }
