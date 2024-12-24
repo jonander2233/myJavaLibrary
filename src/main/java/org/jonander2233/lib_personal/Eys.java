@@ -12,11 +12,12 @@ import java.util.Scanner;
 public class Eys {
     private Scanner lector = new Scanner(System.in);
     private Locale locale;
-    private ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
+    private ResourceBundle mensajes;
     private Menu menu;
     public Eys(Lang language) {
         locale = new Locale(language.getLang(), language.getCountry());
         this.menu = new Menu(language);
+        this.mensajes = ResourceBundle.getBundle("messages", locale);
     }
     public String leer() {
         String texto = lector.nextLine();

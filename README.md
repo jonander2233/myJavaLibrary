@@ -6,7 +6,7 @@ repositories {
     maven ("https://jitpack.io")
 }
 dependencies {
-    implementation ("com.github.jonander2233:myJavaLibrary:1.1.4")
+    implementation ("com.github.jonander2233:myJavaLibrary:1.1.5")
 }
 ```
 `Maven`
@@ -21,7 +21,7 @@ dependencies {
         <dependency>
             <groupId>com.github.jonander2233</groupId>
             <artifactId>myJavaLibrary</artifactId>
-            <version>1.1.4</version>
+            <version>1.1.5</version>
         </dependency>
     </dependencies>
 ```

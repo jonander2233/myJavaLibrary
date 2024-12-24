@@ -6,10 +6,12 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 public class Menu {
     private static Locale locale; // Idioma por defecto del sistema
-    private static ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
+    private static ResourceBundle mensajes;
 
     public Menu(Lang language) {
         locale = new Locale(language.getLang(), language.getCountry());
+        this.mensajes = ResourceBundle.getBundle("messages", locale);
+
     }
 
     public int show(String titulo, String[] opciones,String textoFinal){
