@@ -1,5 +1,7 @@
 package org.jonander2233.lib_personal;
 
+import org.jonander2233.Lang;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,20 +11,17 @@ import java.util.Scanner;
 
 public class Eys {
     private static Scanner lector = new Scanner(System.in);
-    private static Locale locale = Locale.getDefault(); // Idioma por defecto del sistema
+    private static Locale locale;
     private static ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
-
-    public static void cambiarIdioma(String idioma, String pais) {
-        locale = new Locale(idioma, pais);
-        mensajes = ResourceBundle.getBundle("messages", locale);
+    private static Menu menu;
+    public Eys(Lang language) {
+        locale = new Locale(language.getLang(), language.getCountry());
+        this.menu = new Menu(language);
     }
-
-    public static String leer() {
-        lector = new Scanner(System.in);
+    public String leer() {
         String texto = lector.nextLine();
         return texto;
     }
-
     // --------------------------Reales--------------------------------------------------------
     public static Double imprimirYLeerDouble(String texto) {
         System.out.println(texto);
@@ -182,7 +181,7 @@ public class Eys {
         for (int i = 0; i < enumClass.getEnumConstants().length; i++) {
             opcionesString[i] = enumClass.getEnumConstants()[i].toString();
         }
-        int respuesta = Menu.mostrar(texto, opcionesString);
+        int respuesta = menu.show(texto, opcionesString);
         return enumClass.getEnumConstants()[respuesta - 1];
     }
 

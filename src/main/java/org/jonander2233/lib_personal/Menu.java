@@ -1,17 +1,18 @@
 package org.jonander2233.lib_personal;
+import org.jonander2233.Lang;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 public class Menu {
-    private static Locale locale = Locale.getDefault(); // Idioma por defecto del sistema
+    private static Locale locale; // Idioma por defecto del sistema
     private static ResourceBundle mensajes = ResourceBundle.getBundle("messages", locale);
 
-    public static void cambiarIdioma(String idioma, String pais) {
-        locale = new Locale(idioma, pais);
-        mensajes = ResourceBundle.getBundle("messages", locale);
+    public Menu(Lang language) {
+        locale = new Locale(language.getLang(), language.getCountry());
     }
 
-    public static int mostrar(String titulo, String[] opciones,String textoFinal){
+    public int show(String titulo, String[] opciones,String textoFinal){
         int opcion;
         do {
             System.out.println("*********************");
@@ -29,7 +30,7 @@ public class Menu {
         }while (opcion < 0 || opcion > opciones.length);
         return opcion;
     }
-    public static int mostrar(String titulo, String[] opciones){
+    public static int show(String titulo, String[] opciones){
         int opcion;
         do {
             System.out.println("***************************************");
@@ -48,6 +49,7 @@ public class Menu {
         }while (opcion < 1 || opcion > opciones.length);
         return opcion;
     }
+
     private static int validarOpcion(){
         Scanner scanner = new Scanner(System.in);
         int numero=0;
