@@ -57,10 +57,11 @@ public class Menu {
         int numero=0;
         boolean valido=false;
         do {
-            if (scanner.hasNextInt()) {
+            try {
+                scanner.hasNextInt();
                 numero = scanner.nextInt();
                 valido = true;
-            } else {
+            }catch (Exception e){
                 System.out.println(mensajes.getString("int_num_err"));
                 scanner.next();
             }
